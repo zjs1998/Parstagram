@@ -9,8 +9,10 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    let myrefreshcontrol = UIRefreshControl()
     var posts = [PFObject]()
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +21,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        myrefreshcontrol.addTarget(self, action: #selector(viewDidAppear), for: .valueChanged)
+        tableView.refreshControl = myrefreshcontrol
+        
 
         // Do any additional setup after loading the view.
     }
@@ -33,8 +38,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if posts != nil{
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.myrefreshcontrol.endRefreshing()
             }
+            
         }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +65,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
     
 
     /*
