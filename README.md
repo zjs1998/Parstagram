@@ -27,4 +27,4 @@ Here's a walkthrough of implemented user stories:
 
 Pull to refresh:
 
-<img src='http://g.recordit.co/lT3V9YXBiS.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/lT3V9YXBiS.gif'  />
