@@ -31,6 +31,6 @@ Pull to refresh:
 
 Sign up:
 
-<img src='http://g.recordit.co/TCEGhfrlbk.gif'  />
+<img src='http://g.recordit.co/TCEGhfrlbk.gif' >
 
 
